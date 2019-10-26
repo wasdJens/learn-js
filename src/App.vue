@@ -1,11 +1,21 @@
 <template>
   <div id="app">
-    <h1>Hello World</h1>
+    <b-container>
+      <b-row>
+        <b-col>Sidebar</b-col>
+        <b-col>
+          <calculator></calculator>
+        </b-col>
+      </b-row>
+    </b-container>
   </div>
 </template>
 
 <script>
+import Calculator from "@/views/Calculator.vue";
+
 export default {
-  name: "App"
+  name: "App",
+  components: { Calculator }
 };
 </script>

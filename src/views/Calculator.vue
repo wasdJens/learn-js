@@ -15,6 +15,7 @@
           >
             <b-form-input
               type="number"
+              :disabled="selected === 'sqr' || selected === 'fac'"
               v-model.number="form.secondNumber"
             ></b-form-input>
           </b-form-group>
@@ -80,6 +81,15 @@ export default {
           break;
         case "div":
           this.division(firstNumber, secondNumber);
+          break;
+        case "sqr":
+          this.squareRoot(firstNumber);
+          break;
+        case "exp":
+          this.exponentiation(firstNumber, secondNumber);
+          break;
+        case "fac":
+          this.factorial(firstNumber);
           break;
       }
     }

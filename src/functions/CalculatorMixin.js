@@ -4,7 +4,7 @@ const calculatorMixin = {
       result: 0,
       operations: [
         { value: "add", text: "Addition" },
-        { value: "sub", text: "Subtraktion" },
+        { value: "sub", text: "Subtrahieren" },
         { value: "mul", text: "Multiplikation" },
         { value: "div", text: "Division" }
       ]

@@ -1,43 +1,57 @@
 <template>
-  <div>
-    <b-form>
-      <b-form-group label="Erste Zahl" description="Gib eine Zahl ein">
-        <b-form-input
-          type="number"
-          v-model.number="form.firstNumber"
-        ></b-form-input>
-      </b-form-group>
-      <b-form-group label="Zweite Zahl" description="Gib eine weitere Zahl ein">
-        <b-form-input
-          type="number"
-          v-model.number="form.secondNumber"
-        ></b-form-input>
-      </b-form-group>
-      <b-form-group
-        label="Rechenoperation auswählen"
-        description="Nur eine Auswahl möglich"
-      >
-        <b-form-select v-model="selected" :options="operations"></b-form-select>
-      </b-form-group>
-      <b-button
-        variant="success"
-        :disabled="selected === null ? true : false"
-        v-on:click="addition(form.firstNumber, form.secondNumber)"
-        >Berechnen</b-button
-      >
-      <b-form-group label="Ergebnis">
-        <b-form-input
-          type="text"
-          v-model="result"
-          :disabled="true"
-        ></b-form-input>
-      </b-form-group>
-    </b-form>
-  </div>
+  <b-row>
+    <b-col cols="6">
+      <b-card>
+        <b-form>
+          <b-form-group label="Erste Zahl" description="Gib eine Zahl ein">
+            <b-form-input
+              type="number"
+              v-model.number="form.firstNumber"
+            ></b-form-input>
+          </b-form-group>
+          <b-form-group
+            label="Zweite Zahl"
+            description="Gib eine weitere Zahl ein"
+          >
+            <b-form-input
+              type="number"
+              v-model.number="form.secondNumber"
+            ></b-form-input>
+          </b-form-group>
+          <b-form-group
+            label="Rechenoperation auswählen"
+            description="Nur eine Auswahl möglich"
+          >
+            <b-form-select
+              v-model="selected"
+              :options="operations"
+            ></b-form-select>
+          </b-form-group>
+          <b-button
+            variant="success"
+            :disabled="selected === null ? true : false"
+            v-on:click="calculate(form.firstNumber, form.secondNumber)"
+            >Berechnen</b-button
+          >
+          <b-form-group label="Ergebnis">
+            <b-form-input
+              type="text"
+              v-model="result"
+              :disabled="true"
+            ></b-form-input>
+          </b-form-group>
+        </b-form>
+      </b-card>
+    </b-col>
+    <b-col cols="5">
+      <info v-bind:fileContent="fileContent"></info>
+    </b-col>
+  </b-row>
 </template>
 
 <script>
 import { CALC_MIXIN } from "@/functions/CalculatorMixin";
+import aufgabe from "../../docs/Aufgabe1.md";
 
 export default {
   name: "Calculator",
@@ -48,7 +62,8 @@ export default {
       form: {
         firstNumber: 0,
         secondNumber: 0
-      }
+      },
+      fileContent: aufgabe
     };
   },
   methods: {

@@ -1,3 +1,11 @@
 module.exports = {
-  lintOnSave: "warning"
+  lintOnSave: "warning",
+  chainWebpack: config => {
+    config.module
+      .rule("raw")
+      .test(/\.md$/)
+      .use("raw-loader")
+      .loader("raw-loader")
+      .end();
+  }
 };

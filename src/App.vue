@@ -1,21 +1,14 @@
 <template>
   <div id="app">
-    <b-container>
-      <b-row>
-        <b-col>Sidebar</b-col>
-        <b-col>
-          <calculator></calculator>
-        </b-col>
-      </b-row>
-    </b-container>
+    <b-navbar>
+      <b-navbar-brand>Conclurer</b-navbar-brand>
+    </b-navbar>
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import Calculator from "@/views/Calculator.vue";
-
 export default {
-  name: "App",
-  components: { Calculator }
+  name: "App"
 };
 </script>

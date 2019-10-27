@@ -2,6 +2,9 @@
   <b-row>
     <b-col cols="2">
       <b-list-group>
+        <router-link v-bind:to="{ name: 'playground' }">
+          <b-list-group-item>Playground</b-list-group-item>
+        </router-link>
         <router-link v-bind:to="{ name: 'calculator' }">
           <b-list-group-item>Taschenrechner</b-list-group-item>
         </router-link>

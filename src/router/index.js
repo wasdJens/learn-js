@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import Main from "@/views/Main.vue";
 import Calculator from "@/views/Calculator.vue";
 import TicTacToe from "@/views/TicTacToe.vue";
+import Playground from "@/views/Playground.vue";
 
 Vue.use(VueRouter);
 
@@ -21,6 +22,11 @@ const routes = [
         path: "/tictactoe",
         name: "tictactoe",
         component: TicTacToe
+      },
+      {
+        path: "/playground",
+        name: "playground",
+        component: Playground
       }
     ]
   }

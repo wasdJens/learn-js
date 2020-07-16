@@ -4,6 +4,8 @@ This repo is a sample codebase written for internships at conclurer for pupils t
 
 Each pupil got an basic instruction to git and cloned the master branch to start working on the implementation - The exersices are all found under `./docs` and are available in german. 
 
+![Example Application Screen](https://i.imgur.com/dfweCci.png)
+
 ## Project setup
 ```
 yarn install
